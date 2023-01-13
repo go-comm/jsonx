@@ -9,15 +9,17 @@ import (
 
 var json = jsoniter.ConfigCompatibleWithStandardLibrary
 
-var Jsoniter jsonx.API = &jsoniterLibrary{}
+var JsoniterAPI jsonx.API = &jsoniterLibrary{}
 
 func init() {
-	jsonx.NewDecoder = Jsoniter.NewDecoder
-	jsonx.NewEncoder = Jsoniter.NewEncoder
-	jsonx.Marshal = Jsoniter.Marshal
-	jsonx.MarshalIndent = Jsoniter.MarshalIndent
-	jsonx.Unmarshal = Jsoniter.Unmarshal
-	jsonx.Valid = Jsoniter.Valid
+	jsonx.NewDecoder = JsoniterAPI.NewDecoder
+	jsonx.NewEncoder = JsoniterAPI.NewEncoder
+	jsonx.Marshal = JsoniterAPI.Marshal
+	jsonx.MarshalIndent = JsoniterAPI.MarshalIndent
+	jsonx.MarshalToString = json.MarshalToString
+	jsonx.Unmarshal = JsoniterAPI.Unmarshal
+	jsonx.UnmarshalFromString = JsoniterAPI.UnmarshalFromString
+	jsonx.Valid = JsoniterAPI.Valid
 }
 
 type jsoniterLibrary struct{}

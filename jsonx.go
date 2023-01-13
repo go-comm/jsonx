@@ -32,20 +32,20 @@ type API interface {
 	Valid(data []byte) bool
 }
 
-var Standard API = &standardLibrary{}
+var StandardAPI API = &standardLibrary{}
 
-var NewDecoder func(r io.Reader) Decoder = Standard.NewDecoder
+var NewDecoder func(r io.Reader) Decoder = StandardAPI.NewDecoder
 
-var NewEncoder func(w io.Writer) Encoder = Standard.NewEncoder
+var NewEncoder func(w io.Writer) Encoder = StandardAPI.NewEncoder
 
-var Marshal func(v interface{}) ([]byte, error) = Standard.Marshal
+var Marshal func(v interface{}) ([]byte, error) = StandardAPI.Marshal
 
-var MarshalIndent func(v interface{}, prefix, indent string) ([]byte, error) = Standard.MarshalIndent
+var MarshalIndent func(v interface{}, prefix, indent string) ([]byte, error) = StandardAPI.MarshalIndent
 
-var MarshalToString func(v interface{}) (string, error) = Standard.MarshalToString
+var MarshalToString func(v interface{}) (string, error) = StandardAPI.MarshalToString
 
-var Unmarshal func(data []byte, v interface{}) error = Standard.Unmarshal
+var Unmarshal func(data []byte, v interface{}) error = StandardAPI.Unmarshal
 
-var UnmarshalFromString func(str string, v interface{}) error = Standard.UnmarshalFromString
+var UnmarshalFromString func(str string, v interface{}) error = StandardAPI.UnmarshalFromString
 
-var Valid func(data []byte) bool = Standard.Valid
+var Valid func(data []byte) bool = StandardAPI.Valid
