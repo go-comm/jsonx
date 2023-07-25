@@ -22,6 +22,13 @@ func init() {
 	jsonx.Valid = SonicAPI.Valid
 }
 
+func SetAPI(api sonic.API) {
+	if api == nil {
+		api = sonic.ConfigFastest
+	}
+	json = api
+}
+
 type sonicLibrary struct{}
 
 func (*sonicLibrary) NewDecoder(r io.Reader) jsonx.Decoder {

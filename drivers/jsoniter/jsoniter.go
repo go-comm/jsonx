@@ -22,6 +22,13 @@ func init() {
 	jsonx.Valid = JsoniterAPI.Valid
 }
 
+func SetAPI(api jsoniter.API) {
+	if api == nil {
+		api = jsoniter.ConfigFastest
+	}
+	json = api
+}
+
 type jsoniterLibrary struct{}
 
 func (*jsoniterLibrary) NewDecoder(r io.Reader) jsonx.Decoder {
