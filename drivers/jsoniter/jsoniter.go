@@ -16,7 +16,7 @@ func init() {
 	jsonx.NewEncoder = JsoniterAPI.NewEncoder
 	jsonx.Marshal = JsoniterAPI.Marshal
 	jsonx.MarshalIndent = JsoniterAPI.MarshalIndent
-	jsonx.MarshalToString = json.MarshalToString
+	jsonx.MarshalToString = JsoniterAPI.MarshalToString
 	jsonx.Unmarshal = JsoniterAPI.Unmarshal
 	jsonx.UnmarshalFromString = JsoniterAPI.UnmarshalFromString
 	jsonx.Valid = JsoniterAPI.Valid
